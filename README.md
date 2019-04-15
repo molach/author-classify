@@ -8,4 +8,4 @@ Next, run "transition_probabilities.pi" to create the training data (which will 
 
 Next, run "author_classify_train.pi" to create and train a NN.
 
-(The text files are from books by G.K. Chesterton and Herman Melville, respectively, from Project Gutenberg: http://gutenberg.net/.
+(The text files are from books by G.K. Chesterton and Herman Melville, respectively, from Project Gutenberg: http://gutenberg.net/.)
