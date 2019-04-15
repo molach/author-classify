@@ -1,0 +1,26 @@
+import ann.
+
+main =>
+	AnnDef = [
+		$layer(729),
+		$layer(729),
+		$layer(729),
+		$layer(729),
+		$layer(729),
+	%	$layer(729),
+	%	$layer(729),
+	%	$layer(729),
+		$layer(2)
+		],
+	Ann = nn_new(AnnDef),
+	Data = nn_load_data("transition_probabilities.data"),
+	TrainOpts = [
+		$derror(0.01),
+		$maxep(1000),
+		$report(10)
+		],
+	nn_train_ann(Ann, Data, TrainOpts),
+	nn_save(Ann, "author_classify.net"),
+	nn_destroy(Data),
+	nn_destroy(Ann),
+	println("Done").

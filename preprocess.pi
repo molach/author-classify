@@ -1,0 +1,24 @@
+
+main =>
+	println("How many files do you want to preprocess?"),
+	Num_files = read_int(stdin),
+	foreach(I in 1..Num_files)
+		println("Enter the name of a file to process:"),
+		Filename = read_line(stdin),
+		Reader = open(Filename, read),  
+     		Writer = open("processed_" ++ Filename, write),  
+     		Char = read_char(Reader),
+		while(Char != end_of_file)
+			% If the current character is uppercase, skip the entire word
+			if ord(Char) >= ord('A') && ord(Char) <= ord('Z') then 
+				while(Char != ' ')
+					Char := read_char(Reader)
+				end
+			elseif (ord(Char) >= ord('a') && ord(Char) <= ord('z')) || Char == ' ' then
+				print(Writer, Char)
+			end,
+			Char := read_char(Reader)
+		end,
+		close(Reader),
+		close(Writer)
+	end.
